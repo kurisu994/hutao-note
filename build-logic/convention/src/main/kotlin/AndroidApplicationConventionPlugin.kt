@@ -8,6 +8,14 @@ import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
 
+/**
+ * application插件
+ *
+ * @author : kurisu
+ * @date : 2024-01-30 14:22
+ * @version : 1.0
+ *
+ */
 class AndroidApplicationConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {

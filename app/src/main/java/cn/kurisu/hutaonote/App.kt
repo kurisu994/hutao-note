@@ -2,7 +2,6 @@ package cn.kurisu.hutaonote
 
 import android.app.Activity
 import android.app.Application
-import android.content.Context
 import android.graphics.Color
 import android.net.ConnectivityManager
 import android.net.Network
@@ -18,7 +17,6 @@ import coil.ImageLoaderFactory
 import com.alipay.alipaylogger.Log
 import com.alipay.mobile.common.logging.api.LoggerFactory
 import com.alipay.mobile.framework.LauncherApplicationAgent
-import com.alipay.mobile.framework.quinoxless.QuinoxlessFramework
 import com.alipay.mobile.h5container.api.H5Page
 import com.alipay.mobile.nebula.appcenter.res.H5ResourceManager
 import com.alipay.mobile.nebula.provider.H5AppCenterPresetProvider
@@ -45,7 +43,7 @@ import javax.inject.Provider
  * app入口
  * @className : App
  * @author : kurisu
- * @date : 2024-01-12 00:28
+ * @date : 2024-01-31 13:28
  */
 private const val TAG = "hutaonote-Application"
 
@@ -94,7 +92,7 @@ class App : Application(), ImageLoaderFactory {
                 ucInitCallback = object : MriverInitParam.UCInitCallback {
                     override fun onInit() {
                         Timber.tag(TAG).d("uccore初始化成功")
-                         h5Config()
+                        h5Config()
                     }
 
                     override fun onError(e: Exception?) {

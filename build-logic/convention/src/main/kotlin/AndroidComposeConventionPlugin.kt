@@ -5,6 +5,14 @@ import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.dependencies
 
+/**
+ * compose插件
+ *
+ * @author : kurisu
+ * @date : 2024-01-30 14:24
+ * @version : 1.0
+ *
+ */
 class AndroidComposeConventionPlugin : Plugin<Project> {
 
     override fun apply(target: Project) {
