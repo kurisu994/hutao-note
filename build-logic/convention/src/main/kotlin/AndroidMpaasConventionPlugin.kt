@@ -38,6 +38,8 @@ class AndroidMpaasConventionPlugin : Plugin<Project> {
                 )
                 add("implementation", libs.findLibrary("mpaas.mriver").get())
                 add("implementation", libs.findLibrary("mpaas.ktx").get())
+                add("implementation", libs.findLibrary("mpaas.uccore").get())
+                add("implementation", libs.findLibrary("mpaas.framework").get())
                 add("implementation", libs.findLibrary("mpaas.tinyapp").get())
                 add("implementation", libs.findLibrary("mpaas.scan").get())
                 add("implementation", libs.findLibrary("mpaas.scanai").get())

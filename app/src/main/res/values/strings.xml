@@ -8,4 +8,5 @@
     <string name="mp_btn2">打开小程序2</string>
     <string name="mp_btn3">扫码</string>
     <string name="one_more_press_2_back">再按一次返回桌面</string>
+    <string name="title_activity_main2">MainActivity2</string>
 </resources>

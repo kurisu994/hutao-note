@@ -33,7 +33,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <!-- 表示当前已经适配了分区存储 -->
         <meta-data
             android:name="ScopedStorage"
@@ -46,17 +45,13 @@
         <meta-data
             android:name="notch.config"
             android:value="portrait|landscape" />
-
-        <!-- 小程序 aar 配置-->
+        <!-- 小程序 aar 配置 -->
         <meta-data
             android:name="nebula.android.meta.enable"
             android:value="true" />
-
         <meta-data
             android:name="mpaas.init.param"
             android:value="${applicationId}.other.MriverInitImpl" />
-
-
         <!-- 适配 Android 7.0 文件意图 -->
         <provider
             android:name="androidx.core.content.FileProvider"

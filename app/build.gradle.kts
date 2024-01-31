@@ -129,10 +129,6 @@ dependencies {
     implementation(libs.immersionbar)
     implementation(libs.immersionbar.ktx)
 
-    implementation("com.mpaas.android:uccore")
-    implementation("com.mpaas.android:nebula")
-    implementation("com.mpaas.android:framework")
-
     //--------------调试相关包--------------------------------//
     testImplementation(libs.junit4)
     androidTestImplementation(libs.androidx.test.ext)
