@@ -1,0 +1,115 @@
+[versions]
+androidDesugarJdkLibs = "2.0.4"
+# AGP and tools should be updated together
+androidGradlePlugin = "8.2.2"
+androidTools = "31.2.2"
+androidxComposeBom = "2024.01.00"
+androidxActivity = "1.8.2"
+androidxAppcompat = "1.6.1"
+constraintlayout = "2.1.4"
+androidxCore = "1.12.0"
+androidxEspresso = "3.5.1"
+androidxLifecycle = "2.7.0"
+androidxTestExt = "1.1.5"
+androidxNavigation = "2.7.6"
+easyconfig = "2.8.0"
+googleMaterial = "1.11.0"
+androidxComposeCompiler = "1.5.8"
+junit4 = "4.13.2"
+hilt = "2.50"
+kotlin = "1.9.22"
+coil = "2.5.0"
+kotlinxCoroutines = "1.7.3"
+kotlinxDatetime = "0.5.0"
+kotlinxSerializationJson = "1.6.0"
+ksp = "1.9.22-1.0.17"
+okhttp = "4.12.0"
+retrofit = "2.9.0"
+retrofitKotlinxSerializationJson = "1.0.0"
+toaster = "12.6"
+truth = "1.1.5"
+timber = "5.0.1"
+immersionbar = "3.2.2"
+mpaasKtx = "1.0.0-beta1"
+
+[libraries]
+android-desugarJdkLibs = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "androidDesugarJdkLibs" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "androidxComposeBom" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidxActivity" }
+androidx-compose-material-iconsExtended = { group = "androidx.compose.material", name = "material-icons-extended" }
+androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
+androidx-compose-runtime = { group = "androidx.compose.runtime", name = "runtime" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidxAppcompat" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+androidx-compose-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+androidx-compose-ui-test = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-compose-ui-testManifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidxCore" }
+androidx-lifecycle-runtimeKtx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "androidxLifecycle" }
+androidx-lifecycle-livedataKtx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "androidxLifecycle" }
+androidx-lifecycle-viewmodelKtx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "androidxLifecycle" }
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "androidxNavigation" }
+androidx-navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "androidxNavigation" }
+androidx-navigation-ui = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "androidxNavigation" }
+androidx-test-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidxEspresso" }
+androidx-test-ext = { group = "androidx.test.ext", name = "junit", version.ref = "androidxTestExt" }
+coil-kt = { group = "io.coil-kt", name = "coil", version.ref = "coil" }
+coil-kt-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
+coil-kt-svg = { group = "io.coil-kt", name = "coil-svg", version.ref = "coil" }
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
+javax-inject = { module = "javax.inject:javax.inject", version = "1" }
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinxCoroutines" }
+kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinxCoroutines" }
+kotlinx-datetime = { group = "org.jetbrains.kotlinx", name = "kotlinx-datetime", version.ref = "kotlinxDatetime" }
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
+kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib-jdk8", version.ref = "kotlin" }
+okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
+retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+retrofit-kotlin-serialization = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "retrofitKotlinxSerializationJson" }
+truth = { group = "com.google.truth", name = "truth", version.ref = "truth" }
+google-material = { group = "com.google.android.material", name = "material", version.ref = "googleMaterial" }
+junit4 = { group = "junit", name = "junit", version.ref = "junit4" }
+
+# 吐司框架：https://github.com/getActivity/Toaster
+toaster = { group = "com.github.getActivity", name = "Toaster", version.ref = "toaster" }
+# 日志打印框架：https://github.com/JakeWharton/timber
+timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
+#  沉浸式框架：https://github.com/gyf-dev/ImmersionBar
+immersionbar = { group = "com.geyifeng.immersionbar", name = "immersionbar", version.ref = "immersionbar" }
+immersionbar-ktx = { group = "com.geyifeng.immersionbar", name = "immersionbar-ktx", version.ref = "immersionbar" }
+# mpass https://help.aliyun.com/product/49548.html?spm=a2c4g.2546073.0.0.f110e07bFcEP9c
+mpaas-tinyapp = { group = "com.mpaas.android", name = "tinyapp" }
+mpaas-mriver = { group = "com.mpaas.android", name = "mriver" }
+mpaas-nebula = { group = "com.mpaas.android", name = "nebula" }
+mpaas-scan = { group = "com.mpaas.android", name = "scan" }
+mpaas-scanai = { group = "com.mpaas.android", name = "scan_ai" }
+mpaas-uccore = { group = "com.mpaas.android", name = "uccore" }
+mpaas-framework = { group = "com.mpaas.android", name = "framework" }
+mpaas-utdid = { group = "com.mpaas.android", name = "utdid" }
+mpaas-ktx = { group = "com.mpaas.android", name = "mpaas-android-ktx", version.ref = "mpaasKtx" }
+
+# Dependencies of the included build-logic
+android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
+android-tools-common = { group = "com.android.tools", name = "common", version.ref = "androidTools" }
+kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+android-easyconfig = { group = "com.android.boost.easyconfig", name = "easyconfig", version.ref = "easyconfig" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
+android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+
+# Plugins defined by this project
+kurisu-android-application = { id = "kurisu.android.application", version = "unspecified" }
+kurisu-android-compose = { id = "kurisu.android.compose", version = "unspecified" }
+kurisu-android-library = { id = "kurisu.android.library", version = "unspecified" }
+kurisu-android-hilt = { id = "kurisu.android.hilt", version = "unspecified" }
+kurisu-android-mpaas = { id = "kurisu.android.mpaas", version = "unspecified" }
+

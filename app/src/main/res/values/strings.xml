@@ -1,3 +1,11 @@
 <resources>
-
+    <string name="common_network_error">当前网络不可用，请检查网络设置</string>
+    <string name="title_home">主页</string>
+    <string name="title_dashboard">工作台</string>
+    <string name="title_notifications">通知</string>
+    <string name="title_profile">我的</string>
+    <string name="mp_btn1">打开小程序1</string>
+    <string name="mp_btn2">打开小程序2</string>
+    <string name="mp_btn3">扫码</string>
+    <string name="one_more_press_2_back">再按一次返回桌面</string>
 </resources>
