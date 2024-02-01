@@ -5,6 +5,7 @@ import java.util.Date
 
 plugins {
     alias(libs.plugins.kurisu.android.application)
+    alias(libs.plugins.kurisu.android.compose)
     alias(libs.plugins.kurisu.android.hilt)
     alias(libs.plugins.kurisu.android.mpaas)
 }

@@ -170,6 +170,7 @@ class ActivityManager private constructor() : ActivityLifecycleCallbacks {
                 it.setText(AppConfig.getBuildType().uppercase(Locale.getDefault()))
                 it.visibility = View.VISIBLE
                 it.z = 10F
+                it.elevation=10F
             }
             (activity.window.decorView as FrameLayout).addView(debugFlag)
         }

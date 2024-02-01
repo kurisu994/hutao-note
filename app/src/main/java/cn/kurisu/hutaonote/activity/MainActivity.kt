@@ -3,32 +3,46 @@ package cn.kurisu.hutaonote.activity
 import android.Manifest
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.ComponentActivity
 import androidx.activity.OnBackPressedCallback
-import androidx.appcompat.app.AppCompatActivity
+import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.QrCodeScanner
+import androidx.compose.material3.Button
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.core.app.ActivityCompat
 import cn.kurisu.hutaonote.R
-import cn.kurisu.hutaonote.databinding.ActivityMainBinding
+import cn.kurisu.hutaonote.ui.theme.HuTheme
 import com.alipay.android.phone.scancode.export.ScanRequest
 import com.alipay.android.phone.scancode.export.adapter.MPScan
-import com.gyf.immersionbar.ktx.immersionBar
 import com.mpaas.mriver.api.debug.MriverDebug
 import com.mpaas.mriver.api.integration.Mriver
 import com.mpaas.nebula.adapter.api.MPNebula
-import com.mpaas.nebula.adapter.api.MPTinyHelper
 import timber.log.Timber
 
 private const val TAG = "MainActivity"
 
-class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+
+class MainActivity : ComponentActivity() {
     private var exitTime = 0L
+
+    @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        immersionBar {
-            statusBarColor(R.color.transparent)
-        }
         backPressedDis()
         ActivityCompat.requestPermissions(
             this,
@@ -39,25 +53,72 @@ class MainActivity : AppCompatActivity() {
             1000
         )
 
-        binding.miniBtn1.setOnClickListener {
-            MPNebula.startApp( "7215306148277821");
-//            Mriver.startApp(this, "7215306148277821")
-        }
+        setContent {
+            HuTheme {
+                Scaffold(
+                    topBar = {
+                        TopAppBar(
+                            title = {
+                                Text("首页")
+                            },
+                            actions = {
+                                IconButton(onClick = { /* do something */ }) {
+                                    Icon(
+                                        imageVector = Icons.Outlined.QrCodeScanner,
+                                        contentDescription = null
+                                    )
+                                }
+                            },
+                            modifier = Modifier.shadow(10.dp)
+                        )
+                    },
+                ) { paddingValues ->
+                    Column(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .padding(paddingValues)
+                            .padding(10.dp),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Button(
+                            onClick = {
+                                MPNebula.startApp("7215306148277821")
+//                            Mriver.startApp(this@MainActivity, "7215306148277821")
+                            },
+                            modifier = Modifier
+                                .width(200.dp)
+                        ) {
+                            Text(
+                                text = "小程序1",
+                                fontSize = 13.sp
+                            )
+                        }
 
-        binding.miniBtn2.setOnClickListener {
-            Mriver.startApp(this, "1721530614827782")
-        }
-        binding.miniBtn3.setOnClickListener {
-            val activity = this
-            val request = ScanRequest()
-            request.setScanType(ScanRequest.ScanType.QRCODE)
-            MPScan.startMPaasScanActivity(
-                activity, request
-            ) { b, intent ->
-                if (b) {
-                    Timber.tag(TAG).i(" ---- 结果 %s", intent.data)
+                        Button(
+                            onClick = {
+                                Mriver.startApp(this@MainActivity, "1721530614827782")
+                            },
+                            modifier = Modifier
+                                .width(200.dp)
+                        ) {
+                            Text(
+                                text = "小程序2",
+                                fontSize = 13.sp
+                            )
+                        }
+
+                        Button(
+                            onClick = { handleScan() },
+                            modifier = Modifier
+                                .width(200.dp)
+                        ) {
+                            Text(
+                                text = "扫码",
+                                fontSize = 13.sp
+                            )
+                        }
+                    }
                 }
-                MriverDebug.debugAppByUri(this,intent.data);
             }
         }
     }
@@ -75,5 +136,20 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         })
+    }
+
+    private fun handleScan() {
+        val request = ScanRequest()
+        request.setScanType(ScanRequest.ScanType.QRCODE)
+        MPScan.startMPaasScanActivity(
+            this@MainActivity, request
+        ) { b, intent ->
+            intent?.let {
+                if (b) {
+                    Timber.tag(TAG).i(" ---- 结果 %s", intent.data)
+                }
+                MriverDebug.debugAppByUri(this@MainActivity, intent.data)
+            }
+        }
     }
 }
