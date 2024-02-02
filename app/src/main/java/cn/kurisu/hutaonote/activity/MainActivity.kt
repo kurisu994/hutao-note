@@ -13,7 +13,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.QrCodeScanner
+import androidx.compose.material.icons.filled.CropFree
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -69,7 +69,7 @@ class MainActivity : ComponentActivity() {
                             actions = {
                                 IconButton(onClick = { /* do something */ }) {
                                     Icon(
-                                        imageVector = Icons.Outlined.QrCodeScanner,
+                                        imageVector = Icons.Filled.CropFree,
                                         contentDescription = null
                                     )
                                 }
@@ -138,6 +138,12 @@ class MainActivity : ComponentActivity() {
                     Color.Cyan
                 )
             )
+
+            MyColumn(modifier = Modifier.padding(10.dp)) {
+                Text(text = "hello", color = Color(0xFF757575))
+                Text(text = "你好", color = Color(0xFF757575))
+                Text(text = "kokoa", color = Color.Gray)
+            }
         }
     }
 
@@ -146,6 +152,7 @@ class MainActivity : ComponentActivity() {
     fun PreviewLayout() {
         BodyLayout(paddingValues = PaddingValues(0.dp))
     }
+
 
     private fun backPressedDis() {
         //双击返回键回退桌面

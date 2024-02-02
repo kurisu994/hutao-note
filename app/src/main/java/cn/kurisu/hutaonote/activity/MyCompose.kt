@@ -6,6 +6,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.FirstBaseline
+import androidx.compose.ui.layout.Layout
 import androidx.compose.ui.layout.layout
 import androidx.compose.ui.text.TextLayoutResult
 import androidx.compose.ui.text.TextStyle
@@ -66,6 +67,20 @@ fun MyText(
     )
 }
 
+@Composable
+fun MyColumn(modifier: Modifier = Modifier, content: @Composable () -> Unit) {
+    Layout(content, modifier) { measurables, constraints ->
+        val placeableList = measurables.map { measurable -> measurable.measure(constraints) }
+        var pY = 0
+        layout(constraints.maxWidth, constraints.maxHeight) {
+            placeableList.forEach { placeable ->
+                placeable.placeRelative(0, pY)
+                pY += placeable.height
+            }
+        }
+    }
+}
+
 fun Modifier.firstBaseline2Top(baseline2Top: Dp?) = this.then(
     layout { measurable, constraints ->
         val placeable = measurable.measure(constraints)
@@ -79,3 +94,4 @@ fun Modifier.firstBaseline2Top(baseline2Top: Dp?) = this.then(
         }
     }
 )
+
