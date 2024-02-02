@@ -185,7 +185,7 @@ class App : Application(), ImageLoaderFactory {
         // H5 容器拦截 ssl错误
         H5Utils.setProvider(
             H5ReceivedSslErrorHandler::class.java.name,
-            H5ReceivedSslErrorHandler { apWebView, apSslErrorHandler, sslError ->
+            H5ReceivedSslErrorHandler { _, apSslErrorHandler, _ ->
                 try {
                     // 表示忽略ssl错误
                     apSslErrorHandler.proceed()

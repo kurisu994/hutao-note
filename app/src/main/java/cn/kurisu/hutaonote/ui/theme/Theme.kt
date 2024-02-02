@@ -178,7 +178,7 @@ val DarkAndroidBackgroundTheme = BackgroundTheme(color = Color.Black)
 @Composable
 fun HuTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    androidTheme: Boolean = false,
+    androidTheme: Boolean = true,
     disableDynamicTheming: Boolean = true,
     content: @Composable () -> Unit,
 ) {

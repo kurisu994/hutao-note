@@ -1,4 +1,5 @@
 import cn.kurisu.apps.NiaBuildSuffix
+import com.android.build.api.variant.FilterConfiguration
 import com.android.build.gradle.internal.api.BaseVariantOutputImpl
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -93,7 +94,7 @@ android {
     applicationVariants.all {
         outputs.all {
             if (this is BaseVariantOutputImpl) {
-                var abiName = getFilter(com.android.build.OutputFile.ABI)
+                var abiName = getFilter(FilterConfiguration.FilterType.ABI.name)
                 if (abiName.isNullOrBlank()) abiName = "universal"
                 SimpleDateFormat("MMDDHHmm").format(Date())
                 val fileName =

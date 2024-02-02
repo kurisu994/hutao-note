@@ -83,7 +83,7 @@ class MainActivity : ComponentActivity() {
                         Button(
                             onClick = {
                                 MPNebula.startApp("7215306148277821")
-//                            Mriver.startApp(this@MainActivity, "7215306148277821")
+//                                Mriver.startApp(this@MainActivity, "7215306148277821")
                             },
                             modifier = Modifier
                                 .width(200.dp)
