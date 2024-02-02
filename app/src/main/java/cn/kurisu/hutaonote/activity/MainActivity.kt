@@ -6,7 +6,9 @@ import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
@@ -19,9 +21,12 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.app.ActivityCompat
@@ -73,54 +78,73 @@ class MainActivity : ComponentActivity() {
                         )
                     },
                 ) { paddingValues ->
-                    Column(
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .padding(paddingValues)
-                            .padding(10.dp),
-                        horizontalAlignment = Alignment.CenterHorizontally
-                    ) {
-                        Button(
-                            onClick = {
-                                MPNebula.startApp("7215306148277821")
-//                                Mriver.startApp(this@MainActivity, "7215306148277821")
-                            },
-                            modifier = Modifier
-                                .width(200.dp)
-                        ) {
-                            Text(
-                                text = "小程序1",
-                                fontSize = 13.sp
-                            )
-                        }
-
-                        Button(
-                            onClick = {
-                                Mriver.startApp(this@MainActivity, "1721530614827782")
-                            },
-                            modifier = Modifier
-                                .width(200.dp)
-                        ) {
-                            Text(
-                                text = "小程序2",
-                                fontSize = 13.sp
-                            )
-                        }
-
-                        Button(
-                            onClick = { handleScan() },
-                            modifier = Modifier
-                                .width(200.dp)
-                        ) {
-                            Text(
-                                text = "扫码",
-                                fontSize = 13.sp
-                            )
-                        }
-                    }
+                    BodyLayout(paddingValues)
                 }
             }
         }
+    }
+
+    @Composable
+    fun BodyLayout(paddingValues: PaddingValues) {
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(paddingValues)
+                .padding(20.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Button(
+                onClick = {
+                    MPNebula.startApp("7215306148277821")
+//                                Mriver.startApp(this@MainActivity, "7215306148277821")
+                },
+                modifier = Modifier
+                    .width(200.dp)
+            ) {
+                Text(
+                    text = "小程序1",
+                    fontSize = 13.sp
+                )
+            }
+
+            Button(
+                onClick = {
+                    Mriver.startApp(this@MainActivity, "1721530614827782")
+                },
+                modifier = Modifier
+                    .width(200.dp)
+            ) {
+                Text(
+                    text = "小程序2",
+                    fontSize = 13.sp
+                )
+            }
+
+            Button(
+                onClick = { handleScan() },
+                modifier = Modifier
+                    .width(200.dp)
+            ) {
+                Text(
+                    text = "扫码",
+                    fontSize = 13.sp
+                )
+            }
+
+            MyText(
+                text = "my text",
+                firstBaselineToTop = 30.dp,
+                modifier = Modifier.background(
+                    Color.Cyan
+                )
+            )
+        }
+    }
+
+    @Preview
+    @Composable
+    fun PreviewLayout() {
+        BodyLayout(paddingValues = PaddingValues(0.dp))
     }
 
     private fun backPressedDis() {
