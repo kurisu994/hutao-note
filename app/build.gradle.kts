@@ -124,7 +124,6 @@ dependencies {
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.javax.inject)
-    implementation(libs.coil.kt)
     // 项目三方依赖
     implementation(libs.timber)
     implementation(libs.toaster)
