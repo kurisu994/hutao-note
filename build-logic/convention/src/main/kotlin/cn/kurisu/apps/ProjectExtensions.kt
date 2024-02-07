@@ -9,18 +9,18 @@ val Project.libs
     get(): VersionCatalog = extensions.getByType<VersionCatalogsExtension>().named("libs")
 
 
-val Project.minVersion
+val minVersion
     get(): Int = 24
-val Project.compileVersion
+val compileVersion
     get(): Int = 34
-val Project.buildVersion
+val buildVersion
     get(): String = "34.0.0"
 
-val Project.ndkVer
+val ndkVer
     get(): String = "24.0.8215888"
 
-val Project.mpaas_baseline
+val mpaas_baseline
     get(): String = "10.2.3-42"
 
-val Project.mpaas_artifact
+val mpaas_artifact
     get(): String = "mpaas-baseline"
